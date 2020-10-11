@@ -57,8 +57,8 @@ class Visualizer(object):
 
     def create_routes(self):
         route_line = self.osrm_query(self.list_nodes)
-        routes_gdf['geometry'] = [route_line]
         routes_gdf = gpd.GeoDataFrame(crs='epsg:4326')
+        routes_gdf['geometry'] = [route_line]
         routes_gdf = routes_gdf.to_crs(epsg=3857)
         
         return routes_gdf

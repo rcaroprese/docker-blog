@@ -6,16 +6,16 @@ ENV MAVEN_CLI_OPTS="--batch-mode --errors --fail-at-end --show-version -Dinstall
 # ARG APP_CONFIG=./openrouteservice/src/main/resources/app.config.sample
 ARG APP_CONFIG=./docker/data/conf/app.config
 ARG OSM_FILE=./docker/data/pbf/nb_li.osm.pbf
-ARG GRAPHS=./docker/data/graphs
-ARG ELEV_CACHE=./docker/data/elevation_cache
+# ARG GRAPHS=./docker/data/graphs
+# ARG ELEV_CACHE=./docker/data/elevation_cache
 
 WORKDIR /ors-core
 
 COPY openrouteservice /ors-core/openrouteservice
 COPY $OSM_FILE /ors-core/data/osm_file.pbf
 COPY $APP_CONFIG /ors-core/openrouteservice/src/main/resources/app.config.sample
-COPY $GRAPHS /ors-core/data/graphs
-COPY $ELEV_CACHE /ors-core/data/elevation_cache
+# COPY $GRAPHS /ors-core/data/graphs
+# COPY $ELEV_CACHE /ors-core/data/elevation_cache
 
 RUN ls /ors-core/openrouteservice/src/main/resources/
 
