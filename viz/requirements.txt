@@ -1,0 +1,4 @@
+jupyter
+geopandas
+bokeh
+routingpy
